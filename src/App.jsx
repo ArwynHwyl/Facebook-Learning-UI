@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+//import { useState } from 'react';
+import { Search } from 'lucide-react';
+import './index.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const Interface = () => {
+    // State สำหรับจัดการ tab ที่กำลังแสดงผล
+    return (
+        <div className="min-h-screen bg-gray-100">
+            {/* Navigation Bar  */}
+            <nav className="bg-cyan-600 shadow-sm p-4">
+                <div className="max-w-7xl mx-auto flex items-center justify-between">
+                    {/* ส่วนซ้ายของ Navbar */}
+                    <div className="flex items-center space-x-8">
+                        <h1 className="text-xl font-bold">Reminder</h1>
+                        <div className="flex items-center space-x-4">
+                            {/* ช่องค้นหา */}
+                            <div className="flex-grow flex justify-center">
+                            <div className="relative" >
+                                <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400 self-center" />
+                                <input
+                                    type="text"
+                                    placeholder="Search tokens, addresses..."
+                                    className="pl-10 pr-4 py-2 bg-gray-100 rounded-lg w-64"
+                                />
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    );
+};
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+export default Interface;
